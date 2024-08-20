@@ -4,7 +4,7 @@
 git add .
 
 # Prompt for commit message
-echo -n "Commit message: "
+echo -n "[+] Commit message: "
 read user_message
 
 # Set default commit message if none is provided
@@ -16,13 +16,13 @@ fi
 git commit -m "$user_message"
 
 # Prompt for branch name
-echo "Pushing changes to remote repository..."
+echo "=> Pushing changes to remote repository..."
 #list all available branch
 echo "================================"
 git branch -a
 echo "================================"
 
-echo -n "Branch name: "
+echo -n "[+] Branch name: "
 read branch_name
 
 
