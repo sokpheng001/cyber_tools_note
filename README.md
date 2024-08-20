@@ -1,2 +1,2 @@
-# This Git Repository in for a day in a life of hackers
+# This Git Repository is for a day in a life of hackers
 ================================================================
