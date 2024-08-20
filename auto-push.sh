@@ -20,6 +20,9 @@ echo "Pushing changes to remote repository..."
 echo -n "Branch name: "
 read branch_name
 
+
+#list all available branch
+git branch -a
 # Set default branch name if none is provided
 if [ -z "$branch_name" ]; then
     branch_name="master"
