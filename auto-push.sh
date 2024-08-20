@@ -18,7 +18,10 @@ git commit -m "$user_message"
 # Prompt for branch name
 echo "Pushing changes to remote repository..."
 #list all available branch
+echo "================================"
 git branch -a
+echo "================================"
+
 echo -n "Branch name: "
 read branch_name
 
