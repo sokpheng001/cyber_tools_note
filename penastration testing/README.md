@@ -2,6 +2,8 @@
 1. Discover host or target in a network
     - Tools like:
         - **dirb** `https://www.kali.org/tools/dirb/`: DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses.
+2. Simulating attack
+    - Tools like:
         - **msfconsole**: In msfconsole (part of the Metasploit Framework), a module refers to a self-contained component that performs a specific task. Modules are the building blocks of the framework and can be used to conduct various penetration testing activities, such as scanning, exploitation, and post-exploitation.
             - **Types of Modules in Metasploit**
                 1. Exploit Modules
