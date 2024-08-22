@@ -4,6 +4,14 @@
 # Step for penastration testing
 1. Discover host or target in a network
     - Tools like:
+        - **netdiscover** : is an active/passive ARP reconnaissance tool, initially developed to gain infor‐
+       mation about wireless networks without DHCP servers in wardriving scenarios. It can  also  be
+       used on switched networks. Built on top of libnet and libpcap, it can passively detect online
+       hosts or search for them by sending ARP requests.
+
+            Furthermore, it can be used to inspect your network's ARP traffic, or find network  addresses using auto scan mode, which will scan for common local networks.
+            ``` sudo netdiscover ```
+
         - **dirb** `https://www.kali.org/tools/dirb/`: DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses.
 2. Simulating attack
     - Tools like:
