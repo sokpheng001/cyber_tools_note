@@ -1,6 +1,5 @@
 # This Git Repository is for a day in a life of hackers
 ![](https://your-logo-url.com/logo.png)
----
 ## Hacking Skills
 ### 🕵️‍♂️ Networking
 - Packet Sniffing
