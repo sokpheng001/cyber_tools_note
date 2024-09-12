@@ -1,13 +1,27 @@
-pipeline{
+pipeline {
     agent any
-    environment {
-
+    stages {
+        stage('Build') {
+            steps {
+                // Your build steps here
+                sh 'echo "Building the project"'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Your test steps here
+                sh 'echo "Running tests"'
+            }
+        }
     }
-    stages{
-        stage('Checkout'){
-            steps{
-                // checkout git repository
-                git 'https://github.com/sokpheng001/cyber_tools_note.git'
+    post {
+        success {
+            script {
+                // Make the script executable (in case it isn't already)
+                sh 'chmod +x ./telegram-nitification.sh'
+                
+                // Execute the script
+                sh './telegram-nitification.sh'
             }
         }
     }
