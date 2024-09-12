@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-docker-deployment
+  labels:
+    app: hello-docker
+
+spec:
+  replicas: 3  # Number of instances of the application
+  selector:
+    matchLabels:
+      app: hello-docker
+  template:
+    metadata:
+      labels:
+        app: hello-docker
+    spec:
+      containers:
+      - name: hello-docker-container
+        image: hello_docker:latest  # Replace with your actual image tag
+        
+        ports:
+        - containerPort: 8080       # Port where your container listens
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-docker-service
+spec:
+  type: LoadBalancer  # Use ClusterIP or NodePort based on your environment
+  selector:
+    app: hello-docker
+  ports:
+    - protocol: TCP
+      port: 80          # Exposed port
+      targetPort: 8080  # Container's port
+      nodePort: 3333 # Node's port
