@@ -1,37 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-docker-deployment
-  labels:
-    app: hello-docker
-
+  name: myapp
 spec:
-  replicas: 3  # Number of instances of the application
   selector:
     matchLabels:
-      app: hello-docker
+      app: myapp
   template:
     metadata:
       labels:
-        app: hello-docker
+        app: myapp
     spec:
       containers:
-      - name: hello-docker-container
-        image: hello_docker:latest  # Replace with your actual image tag
-        
+      - name: fastapi
+        image: sokpheng001/fastapi:0.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
-        - containerPort: 8080       # Port where your container listens
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: hello-docker-service
-spec:
-  type: LoadBalancer  # Use ClusterIP or NodePort based on your environment
-  selector:
-    app: hello-docker
-  ports:
-    - protocol: TCP
-      port: 80          # Exposed port
-      targetPort: 8080  # Container's port
-      nodePort: 3333 # Node's port
+        - containerPort: 8080
